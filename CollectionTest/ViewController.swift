@@ -27,9 +27,17 @@ class ViewController: UIViewController {
         if gesture.state == .ended {
             let position = gesture.location(in: collectionView)
             if let indexPath = collectionView.indexPathForItem(at: position) {
-                items.remove(at: indexPath.item)
-                collectionView.deleteItems(at: [indexPath])
-                collectionView.reloadData()
+                let alertController = UIAlertController(title: "削除", message: "これを削除しますか？", preferredStyle: .alert)
+                let yesAction = UIAlertAction(title: "削除", style: .destructive) { [self] _ in
+                    items.remove(at: indexPath.item)
+                    collectionView.deleteItems(at: [indexPath])
+                    collectionView.reloadData()
+                }
+                let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel)
+                alertController.addAction(yesAction)
+                alertController.addAction(cancelAction)
+                self.present(alertController, animated: true
+                )
             }
         }
     }
