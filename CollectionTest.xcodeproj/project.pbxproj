@@ -13,6 +13,8 @@
 		565BA1D0299C8BC80049B535 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565BA1CE299C8BC80049B535 /* Main.storyboard */; };
 		565BA1D2299C8BC90049B535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565BA1D1299C8BC90049B535 /* Assets.xcassets */; };
 		565BA1D5299C8BC90049B535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565BA1D3299C8BC90049B535 /* LaunchScreen.storyboard */; };
+		569DF95F299F2D1D0079140C /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 569DF95E299F2D1D0079140C /* Defaults */; };
+		569DF961299F2D2E0079140C /* SaveDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569DF960299F2D2E0079140C /* SaveDatas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		565BA1D1299C8BC90049B535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		565BA1D4299C8BC90049B535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		565BA1D6299C8BC90049B535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		569DF960299F2D2E0079140C /* SaveDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDatas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				569DF95F299F2D1D0079140C /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +63,7 @@
 				565BA1C8299C8BC80049B535 /* AppDelegate.swift */,
 				565BA1CA299C8BC80049B535 /* SceneDelegate.swift */,
 				565BA1CC299C8BC80049B535 /* ViewController.swift */,
+				569DF960299F2D2E0079140C /* SaveDatas.swift */,
 				565BA1CE299C8BC80049B535 /* Main.storyboard */,
 				565BA1D1299C8BC90049B535 /* Assets.xcassets */,
 				565BA1D3299C8BC90049B535 /* LaunchScreen.storyboard */,
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = CollectionTest;
+			packageProductDependencies = (
+				569DF95E299F2D1D0079140C /* Defaults */,
+			);
 			productName = CollectionTest;
 			productReference = 565BA1C5299C8BC80049B535 /* CollectionTest.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 565BA1BC299C8BC80049B535;
+			packageReferences = (
+				569DF95D299F2D1D0079140C /* XCRemoteSwiftPackageReference "Defaults" */,
+			);
 			productRefGroup = 565BA1C6299C8BC80049B535 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +151,7 @@
 			files = (
 				565BA1CD299C8BC80049B535 /* ViewController.swift in Sources */,
 				565BA1C9299C8BC80049B535 /* AppDelegate.swift in Sources */,
+				569DF961299F2D2E0079140C /* SaveDatas.swift in Sources */,
 				565BA1CB299C8BC80049B535 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		569DF95D299F2D1D0079140C /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		569DF95E299F2D1D0079140C /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 569DF95D299F2D1D0079140C /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 565BA1BD299C8BC80049B535 /* Project object */;
 }

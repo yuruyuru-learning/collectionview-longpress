@@ -6,12 +6,11 @@
 //
 
 import UIKit
+import Defaults
 
 class ViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
-    
-    var items: [String] = ["test","test","test","test","test","test","test"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,7 @@ class ViewController: UIViewController {
             if let indexPath = collectionView.indexPathForItem(at: position) {
                 let alertController = UIAlertController(title: "削除", message: "これを削除しますか？", preferredStyle: .alert)
                 let yesAction = UIAlertAction(title: "削除", style: .destructive) { [self] _ in
-                    items.remove(at: indexPath.item)
+                    Defaults[.items].remove(at: indexPath.item)
                     collectionView.deleteItems(at: [indexPath])
                     collectionView.reloadData()
                 }
@@ -41,11 +40,16 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func add() {
+        Defaults[.items].append("test")
+        collectionView.reloadData()
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return Defaults[.items].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
